@@ -15,7 +15,6 @@ public class ContactManager {
                 .filter(contact -> isContactMatched(contact, query))
                 .toList();
     }
-
     private boolean isContactMatched(Contact contact, String query) {
         if (query == null || query.isEmpty()) return true;
         query = query.toLowerCase();
@@ -24,7 +23,6 @@ public class ContactManager {
                 + " " + contact.getPhone();
         return searchString.toLowerCase().contains(query);
     }
-
     public void addContact(Contact contact) {
         contactDAO.addContact(contact);
     }
